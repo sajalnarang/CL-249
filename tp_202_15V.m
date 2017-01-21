@@ -32,4 +32,3 @@ for i = 1:6
     plot(1:m,T(:,4*i-3));
     hold on;
 end
-T
