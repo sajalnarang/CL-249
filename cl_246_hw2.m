@@ -18,3 +18,8 @@ for temp = temps
     xlim([0 100]);
     ylim([10^-4 10^9]);
 end
+
+title('Spectral Blackbody Emissive Power');
+xlabel('Wavelength, \lambda (\mum)');
+ylabel('Spectral Emissive Power, E_{\lambda, b} (W/m^{2}\cdot\mum)');
+legend('50K','100K','300K','500K','1000K','2000K');
