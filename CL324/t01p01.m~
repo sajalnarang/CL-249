@@ -1,0 +1,10 @@
+clear all;
+clc;
+
+k = [0.00043 0.00103 0.00180 0.00355 0.00717];
+T = [313 319 323 328 333];
+
+y = log(k);
+
+b = (sum(x)*sum(y) - n*dot(x,y))/((sum(x))^2 - n*dot(x,x))
+a = (sum(y) - b*sum(x))/n
