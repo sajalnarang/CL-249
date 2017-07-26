@@ -9,8 +9,8 @@ x = 1./T;
 y = log(k);
 
 [P,S] = polyfit(x,y,1);
-fitConc = polyval(P,x);
-plot(x,y,'o',x,fitConc,'-');
+fitY = polyval(P,x);
+plot(x,y,'o',x,fitY,'-');
 title('ln(k) vs 1/T');
 xlabel('1/T (K^{-1})');
 ylabel('ln(k)');
