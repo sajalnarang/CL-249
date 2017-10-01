@@ -18,3 +18,30 @@ beta = mvregress(X,Y);
 k = 1 / beta(1);
 kB = k * beta(2);
 kT = k * beta(3);
+
+% Part 2 : Calculation of weight of catalyst
+FT0 = 50;
+YT0 = 0.3;
+YH0 = 0.45;
+P0 = 40;
+thetaT = YT0/YT0;
+thetaH = YH0/YT0;
+thetaB = 0;
+vH = -1;
+vT = -1;
+vB = 1;
+e = 0;
+alpha = 9.8 * 10^-5;
+
+f = @(w,X) [-k * YT0^2 * P0^2 * ((thetaH + vH * X(1)) / (1 + e * X(1))) * ((thetaT + vT * X(1)) / (1 + e * X(1))) * X(2)^2 / FT0 / (1 + kB * YT0 * P0 * ((thetaB + vB * X(1)) / (1 + e * X(1))) * X(2) + kT * YT0 * P0 * ((thetaT + vT * X(1)) / (1 + e * X(1))) * X(2))
+            -alpha * (1 + e * X(1)) / 2 / X(2)];
+        
+for i = 1:1000000
+    [w,Xa] = ode45(f, [0 i], [0 1]);
+    [m1,n1] = size(Xa);
+    if Xa(m1,2) <= 1/40
+        break;
+    end
+end
+
+wf = w(end);
