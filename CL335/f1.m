@@ -1,6 +1,6 @@
 function p = f1(X, CA0, CB0, K)
     a = CB0;
-    b = CB0 + CA0 + 1./K;
+    b = - (CB0 + CA0 + 1./K);
     c = CA0;
     d = (b.^2 - 4 * a * c) .^ 1/2;
     N = zeros(4,8);

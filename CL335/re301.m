@@ -111,4 +111,4 @@ legend('Bath 2','Bath 3','Bath 4','Bath 5','Location','northwest')
 K01 = exp(P3(2));
 K02 = exp(P4(2));
 Ea1 = -R * P3(1);
-Ea2 = -R * P3(2);
+Ea2 = -R * P4(1);
